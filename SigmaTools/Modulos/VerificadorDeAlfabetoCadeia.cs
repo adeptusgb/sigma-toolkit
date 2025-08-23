@@ -8,8 +8,10 @@ namespace SigmaToolkit.Modulos
 {
     internal static class VerificadorDeAlfabetoCadeia
     {
-        public static void Run()
+        public static void Rodar()
         {
+            FuncoesAuxiliares.LimparTela();
+
             char[] alfabeto = ['a', 'b'];
 
             Console.WriteLine();

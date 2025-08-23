@@ -12,8 +12,9 @@ namespace SigmaToolkit.Modulos
         private static readonly System.Text.Json.JsonSerializerOptions s_jsonOptions =
             new System.Text.Json.JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 
-        public static void Run()
+        public static void Rodar()
         {
+            FuncoesAuxiliares.LimparTela();
             Console.WriteLine("Classificador T/I/N por JSON");
             Console.WriteLine("Digite T (tratável), I (intratável) ou N (não computável) para cada item.");
 
@@ -40,7 +41,7 @@ namespace SigmaToolkit.Modulos
                     erros++;
                 }
 
-                resultados.Add($"{i + 1}. {(acertou ? "✔ Acertou" : "✘ Errou")} - {item.Descricao} (sua: {char.ToUpperInvariant(resposta)}, correta: {char.ToUpperInvariant(item.Correta)})");
+                resultados.Add($"{i + 1}. {(acertou ? "Acertou" : "Errou")} - {item.Descricao} (sua: {char.ToUpperInvariant(resposta)}, correta: {char.ToUpperInvariant(item.Correta)})");
             }
 
             Console.WriteLine();
