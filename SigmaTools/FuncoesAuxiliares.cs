@@ -25,6 +25,31 @@ namespace SigmaToolkit
             }
         }
 
+        public static bool VerificarSeOSimboloFazParteDoAlfabeto(string simbolo, char[] alfabeto)
+        {
+            if (string.IsNullOrEmpty(simbolo))
+                return false;
+
+            simbolo = simbolo.Trim();
+            if (simbolo.Length != 1)
+                return false;
+
+            return alfabeto.Contains(simbolo[0]);
+        }
+
+        public static int EncontrarSimboloNaCadeiaQueNaoPertenceALinguagem(string cadeia, char[] alfabeto)
+        {
+            if (string.IsNullOrEmpty(cadeia)) return -1;
+
+            for (int i = 0; i < cadeia.Length; i++)
+            {
+                if (!alfabeto.Contains(cadeia[i]))
+                    return i;
+            }
+
+            return -1;
+        }
+
         public static string LerCadeia()
         {
             while (true)
