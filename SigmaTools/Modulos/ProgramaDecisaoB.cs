@@ -12,8 +12,7 @@ namespace SigmaToolkit.Modulos
         public static void Rodar()
         {
             FuncoesAuxiliares.LimparTela();
-            Console.Write("Escreva sua cadeia: ");
-            String? cadeia = Console.ReadLine();
+            String? cadeia = FuncoesAuxiliares.LerCadeia();
             int result = FuncoesAuxiliares.EncontrarSimboloNaCadeiaQueNaoPertenceALinguagem(cadeia ?? "", ['a', 'b']);
             if (result == -1)
             {
@@ -31,6 +30,7 @@ namespace SigmaToolkit.Modulos
                 Console.WriteLine($"Cadeia rejeitada. Simbolo '{cadeia?[result]}' na posicao {result} nao pertence ao alfabeto {{a,b}}.");
             }
             Console.ReadLine();
+            FuncoesAuxiliares.LimparTela();
         }
     }
 }
