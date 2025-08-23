@@ -22,7 +22,7 @@ namespace SigmaToolkit
                 //Console.WriteLine("9) Detector ingenuo de loop");
                 //Console.WriteLine("10) Simulador AFD simples (termina com 'b')");
                 Console.WriteLine("0) Sair");
-                switch (LerOpcaoDoMenu(0, 10))
+                switch (FuncoesAuxiliares.LerOpcaoDoMenu(0, 10))
                 {
                     case 0:
                         return;
@@ -43,23 +43,6 @@ namespace SigmaToolkit
                         break;
                 }
                 Console.WriteLine();
-            }
-        }
-
-        static int LerOpcaoDoMenu(int valorMinimo, int valorMaximo)
-        {
-            while (true)
-            {
-                Console.Write("Opcao: ");
-                string? textoDigitado = Console.ReadLine();
-                if (int.TryParse(textoDigitado, out int valorLido))
-                {
-                    if (valorLido >= valorMinimo && valorLido <= valorMaximo)
-                    {
-                        return valorLido;
-                    }
-                }
-                Console.WriteLine("Opcao invalida. Tente novamente.");
             }
         }
     }
