@@ -39,7 +39,7 @@ namespace SigmaToolkit
                         AvaliadorProposicionalBasico.Run();
                         break;
                     case 5:
-                        ReconhecedorLParEABStar.Run();
+                        ReconhecedorLParEABStar.Rodar();
                         break;
                 }
                 FuncoesAuxiliares.LimparTela();

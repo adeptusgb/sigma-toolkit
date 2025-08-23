@@ -8,7 +8,7 @@ namespace SigmaToolkit.Modulos
 {
     internal static class ReconhecedorLParEABStar
     {
-        public static void Run()
+        public static void Rodar()
         {
             FuncoesAuxiliares.LimparTela();
             Console.WriteLine("1) L_par_a");
