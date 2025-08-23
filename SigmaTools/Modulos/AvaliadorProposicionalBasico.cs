@@ -10,11 +10,12 @@ namespace SigmaToolkit.Modulos
     {
         public static void Rodar()
         {
+            FuncoesAuxiliares.LimparTela();
             Console.WriteLine("\nDigite a fórmula usando P, Q, R, operadores & (AND), | (OR), ! (NOT), -> (IMPLICAÇÃO):");
-            string formula = Console.ReadLine().Replace(" ", "");
+            string? formula = Console.ReadLine().Replace(" ", "");
 
             Console.WriteLine("Deseja gerar tabela-verdade? (S/N):");
-            string escolha = Console.ReadLine().ToUpper();
+            string? escolha = Console.ReadLine().ToUpper();
 
             if (escolha == "S")
             {
@@ -29,13 +30,14 @@ namespace SigmaToolkit.Modulos
                 bool resultado = Avaliar(formula, P, Q, R);
                 Console.WriteLine($"Resultado: {(resultado ? "V" : "F")}");
             }
+            Console.ReadLine();
         }
         static bool LerValor(string varName)
         {
             while (true)
             {
                 Console.Write($"Digite o valor de {varName} (V/F): ");
-                string input = Console.ReadLine().ToUpper();
+                string? input = Console.ReadLine().ToUpper();
                 if (input == "V") return true;
                 if (input == "F") return false;
                 Console.WriteLine("Entrada inválida. Digite V ou F.");
@@ -54,7 +56,7 @@ namespace SigmaToolkit.Modulos
             {
                 int ultimoAbre = expr.LastIndexOf('(');
                 int fecha = expr.IndexOf(')', ultimoAbre);
-                string sub = expr.Substring(ultimoAbre + 1, fecha - ultimoAbre - 1);
+                string? sub = expr.Substring(ultimoAbre + 1, fecha - ultimoAbre - 1);
                 bool subResult = Avaliar(sub, P, Q, R);
                 expr = expr.Substring(0, ultimoAbre) + (subResult ? "1" : "0") + expr.Substring(fecha + 1);
             }
