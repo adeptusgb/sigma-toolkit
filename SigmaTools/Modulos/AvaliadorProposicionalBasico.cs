@@ -31,6 +31,7 @@ namespace SigmaToolkit.Modulos
                 Console.WriteLine($"Resultado: {(resultado ? "V" : "F")}");
             }
             Console.ReadLine();
+            FuncoesAuxiliares.LimparTela();
         }
         static bool LerValor(string varName)
         {
