@@ -33,10 +33,10 @@ namespace SigmaToolkit
                         ClassificadorProblemas.Rodar();
                         break;
                     case 3:
-                        ProgramaDecisaoB.Run();
+                        ProgramaDecisaoB.Rodar();
                         break;
                     case 4:
-                        AvaliadorProposicionalBasico.Run();
+                        AvaliadorProposicionalBasico.Rodar();
                         break;
                     case 5:
                         ReconhecedorLParEABStar.Rodar();
