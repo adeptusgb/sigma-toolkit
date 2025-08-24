@@ -14,6 +14,19 @@ namespace SigmaToolkit.Modulos
             Console.WriteLine("\nDigite a fórmula usando P, Q, R, operadores & (AND), | (OR), ! (NOT), -> (IMPLICAÇÃO):");
             string? formula = Console.ReadLine().Replace(" ", "");
 
+            if (string.IsNullOrEmpty(formula))
+            {
+                FuncoesAuxiliares.LimparTela();
+                Console.WriteLine("Fórmula inválida.");
+                return;
+            }
+            if(!formula.All(c => "PQR&|!->()01".Contains(c) || char.IsWhiteSpace(c)))
+            {
+                FuncoesAuxiliares.LimparTela();
+                Console.WriteLine("Fórmula contém caracteres inválidos.");
+                return;
+            }
+
             Console.WriteLine("Deseja gerar tabela-verdade? (S/N):");
             string? escolha = Console.ReadLine().ToUpper();
 
@@ -30,6 +43,7 @@ namespace SigmaToolkit.Modulos
                 bool resultado = Avaliar(formula, P, Q, R);
                 Console.WriteLine($"Resultado: {(resultado ? "V" : "F")}");
             }
+            Console.WriteLine("Pressione ENTER para continuar...");
             Console.ReadLine();
             FuncoesAuxiliares.LimparTela();
         }

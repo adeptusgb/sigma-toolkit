@@ -29,6 +29,7 @@ namespace SigmaToolkit.Modulos
             {
                 Console.WriteLine($"Cadeia rejeitada. Simbolo '{cadeia?[result]}' na posicao {result} nao pertence ao alfabeto {{a,b}}.");
             }
+            Console.WriteLine("Pressione ENTER para continuar...");
             Console.ReadLine();
             FuncoesAuxiliares.LimparTela();
         }
