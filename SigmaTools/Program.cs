@@ -27,10 +27,10 @@ namespace SigmaToolkit
                     case 0:
                         return;
                     case 1:
-                        VerificadorDeAlfabetoCadeia.Run();
+                        VerificadorDeAlfabetoCadeia.Rodar();
                         break;
                     case 2:
-                        ClassificadorProblemas.Run();
+                        ClassificadorProblemas.Rodar();
                         break;
                     case 3:
                         ProgramaDecisaoB.Rodar();
@@ -39,10 +39,10 @@ namespace SigmaToolkit
                         AvaliadorProposicionalBasico.Rodar();
                         break;
                     case 5:
-                        ReconhecedorLParEABStar.Run();
+                        ReconhecedorLParEABStar.Rodar();
                         break;
                 }
-                Console.WriteLine();
+                FuncoesAuxiliares.LimparTela();
             }
         }
     }
