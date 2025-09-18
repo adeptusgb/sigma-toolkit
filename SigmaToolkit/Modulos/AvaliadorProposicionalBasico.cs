@@ -20,7 +20,7 @@ namespace SigmaToolkit.Modulos
                 Console.WriteLine("Fórmula inválida.");
                 return;
             }
-            if(!formula.All(c => "PQR&|!->()01".Contains(c) || char.IsWhiteSpace(c)))
+            if (!formula.All(c => "PQR&|!->()01".Contains(c) || char.IsWhiteSpace(c)))
             {
                 FuncoesAuxiliares.LimparTela();
                 Console.WriteLine("Fórmula contém caracteres inválidos.");

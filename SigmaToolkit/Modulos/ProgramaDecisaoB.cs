@@ -13,21 +13,17 @@ namespace SigmaToolkit.Modulos
         {
             FuncoesAuxiliares.LimparTela();
             String? cadeia = FuncoesAuxiliares.LerCadeia();
-            int result = FuncoesAuxiliares.EncontrarSimboloNaCadeiaQueNaoPertenceALinguagem(cadeia ?? "", ['a', 'b']);
-            if (result == -1)
+            if (cadeia == null || cadeia.Length == 0)
             {
-                if (cadeia != null && cadeia.EndsWith('b'))
-                {
-                    Console.WriteLine("SIM");
-                }
-                else
-                {
-                    Console.WriteLine("NAO");
-                }
+                Console.WriteLine("CADEIA VAZIA");
+            }
+            else if (cadeia.EndsWith('b'))
+            {
+                Console.WriteLine("SIM");
             }
             else
             {
-                Console.WriteLine($"Cadeia rejeitada. Simbolo '{cadeia?[result]}' na posicao {result} nao pertence ao alfabeto {{a,b}}.");
+                Console.WriteLine("NAO");
             }
             Console.WriteLine("Pressione ENTER para continuar...");
             Console.ReadLine();

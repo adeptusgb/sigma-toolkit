@@ -8,7 +8,7 @@ namespace SigmaToolkit
         {
             while (true)
             {
-                Console.WriteLine("Projeto Toolkit (versao simples)");
+                Console.WriteLine("Sigma Toolkit");
                 Console.WriteLine("---- AV1 ----");
                 Console.WriteLine("1) Verificar alfabeto e cadeia (Sigma={ a,b})");
                 Console.WriteLine("2) Classificador T/I/N por JSON");
